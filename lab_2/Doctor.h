@@ -13,17 +13,18 @@ private:
     string category;          // Категория
 
 public:
-    Doctor(){}
-    Doctor(string Fio,int age,string pol,int numberWorker,int salary,
+    Doctor();
+    Doctor(string category);
+    Doctor(string fio,int age,string pol,int numberWorker,int salary,
            int workExperience,string specialization,string category);
-    ~Doctor(){}
+    ~Doctor();
 
-    void ReadDoctor();
-    void setSpecialization();
-    void setCategory();
+    void Read();
+    void SetSpecialization();
+    void SetCategory();
 
-    void   DisplayDoctor();
-    string getSpecialization();
-    string getCategory();
+    void   Display();
+    string GetSpecialization();
+    string GetCategory();
 };
 

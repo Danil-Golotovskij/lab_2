@@ -14,20 +14,21 @@ private:
     string diagnosis;    // Диагноз
 
 public:
-    Patient(){}
-    Patient(int numberPatient, int numberDoctor, string diagnosis, string Fio, int age, string pol);
-    ~Patient(){}
+    Patient();
+    Patient(int numberDoctor);
+    Patient(int numberPatient, int numberDoctor, string diagnosis, string fio, int age, string pol);
+    ~Patient();
 
-    void findPatient(int numberDoctor);
+    void FindAll(int numberDoctor);
 
-    void ReadPatient();
-    void setNumberPatient();
-    void setNumberDoctor();
-    void setDiagnosis();
+    void Read();
+    void SetNumberPatient();
+    void SetNumberDoctor();
+    void SetDiagnosis();
 
-    void   DisplayPatient();
-    int    getNumberPatient();
-    int    getNumberDoctor();
-    string getDiagnosis();
+    void   Display();
+    int    GetNumberPatient();
+    int    GetNumberDoctor();
+    string GetDiagnosis();
 };
 

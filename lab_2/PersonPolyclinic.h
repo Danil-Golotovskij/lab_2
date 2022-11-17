@@ -7,23 +7,25 @@ using namespace std;
 class PersonPolyclinic {
 
 private:
-    string Fio;   // ФИО 
+    string fio;   // ФИО 
     string pol;   // Пол
     int    age;   // Возраст
 
 public:
-    PersonPolyclinic() {}
+    PersonPolyclinic();
     PersonPolyclinic(int age);
-    PersonPolyclinic(string Fio, int age, string pol);
-    ~PersonPolyclinic(){}
+    PersonPolyclinic(string fio, int age, string pol);
+    ~PersonPolyclinic();
 
-    void setFio();
-    void setAge();
-    void setPol();
+    void Read();
+    void SetFio();
+    void SetAge();
+    void SetPol();
 
-    string getFio();
-    string getPol();
-    int    getAge();
+    void Display();
+    string GetFio();
+    string GetPol();
+    int    GetAge();
 };
    
 

@@ -1,45 +1,60 @@
 #include "Patient.h"
 
-Patient::Patient(int numberPatient, int numberDoctor, string diagnosis, string Fio, int age, string pol) {
+Patient::Patient() : PersonPolyclinic() {
+    numberPatient = 0;
+    numberDoctor = 0;
+    diagnosis = "---";
+}
+
+Patient::Patient(int numberDoctor) : PersonPolyclinic() {
+    numberPatient = 0;
+    this->numberDoctor = numberDoctor;
+    diagnosis = "---";
+}
+
+Patient::Patient(int numberPatient, int numberDoctor, string diagnosis, string fio, int age, string pol) : PersonPolyclinic(fio,age,pol) {
     this->numberPatient = numberPatient;
     this->numberDoctor = numberDoctor;
     this->diagnosis = diagnosis;
-    PersonPolyclinic(Fio, age, pol);
+}
+
+Patient::~Patient() {
+    cout << "Деструктор завершил работу" << endl;
 }
 
 //--------------------------------------------------------------------
 
-void Patient::findPatient(int numberDoctor1) {
-    if (getNumberDoctor() == numberDoctor1) {
+void Patient::FindAll(int numberDoctor1) {
+    if (GetNumberDoctor() == numberDoctor1) {
         cout << "ФИО пациента: ";
-        cout << getFio() << endl;
+        cout << GetFio() << endl;
     }
 }
 
 //--------------------------------------------------------------------
 
-void Patient::ReadPatient() {
-    setFio();
-    setAge();
-    setPol();
-    setNumberPatient();
-    setNumberDoctor();
-    setDiagnosis();
+void Patient::Read() {
+    SetFio();
+    SetAge();
+    SetPol();
+    SetNumberPatient();
+    SetNumberDoctor();
+    SetDiagnosis();
 }
 
-void Patient::setNumberPatient() {
+void Patient::SetNumberPatient() {
     cout << "Введите номер пациента: ";
     cin >> numberPatient;
     while (cin.get() != '\n');
 }
 
-void Patient::setNumberDoctor() {
+void Patient::SetNumberDoctor() {
     cout << "Введите номер доктора: ";
     cin >> numberDoctor;
     while (cin.get() != '\n');
 }
 
-void Patient::setDiagnosis() {
+void Patient::SetDiagnosis() {
     cout << "Введите диагноз: ";
     cin >> diagnosis;
     while (cin.get() != '\n');
@@ -47,23 +62,23 @@ void Patient::setDiagnosis() {
 
 //--------------------------------------------------------------------
 
-void Patient::DisplayPatient() {
-    cout << "ФИО пациента: " << getFio() << endl;
-    cout << "год рождения пациента: " << getAge() << endl;
-    cout << "пол пациента: " << getPol() << endl;
-    cout << "номер пациента: " << getNumberPatient() << endl;
-    cout << "номер лечащего врача: " << getNumberDoctor() << endl;
-    cout << "диагноз пациента: " << getDiagnosis() << endl;
+void Patient::Display() {
+    cout << "ФИО: " << GetFio() << endl;
+    cout << "год рождения: " << GetAge() << endl;
+    cout << "пол: " << GetPol() << endl;
+    cout << "номер пациента: " << GetNumberPatient() << endl;
+    cout << "номер лечащего врача: " << GetNumberDoctor() << endl;
+    cout << "диагноз пациента: " << GetDiagnosis() << endl;
 }
 
-int Patient::getNumberPatient() {
+int Patient::GetNumberPatient() {
     return numberPatient;
 }
 
-int Patient::getNumberDoctor() {
+int Patient::GetNumberDoctor() {
     return numberDoctor;
 }
 
-string Patient::getDiagnosis() {
+string Patient::GetDiagnosis() {
     return diagnosis;
 }

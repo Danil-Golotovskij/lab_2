@@ -1,32 +1,48 @@
 #include "PersonPolyclinic.h"
 
-PersonPolyclinic::PersonPolyclinic(int age) {
-    this->Fio = "-";
-    this->age = age;
-    this->pol = "-";
+PersonPolyclinic::PersonPolyclinic() {
+    this->fio = "---";
+    this->age = 0;
+    this->pol = "---";
 }
 
-PersonPolyclinic::PersonPolyclinic(string Fio, int age, string pol) {
-    this->Fio = Fio;
+PersonPolyclinic::PersonPolyclinic(int age) {
+    this->fio = "---";
+    this->age = age;
+    this->pol = "---";
+}
+
+PersonPolyclinic::PersonPolyclinic(string fio, int age, string pol) {
+    this->fio = fio;
     this->age = age;
     this->pol = pol;
 }
 
+PersonPolyclinic::~PersonPolyclinic() {
+    cout << "Работа деструктора завершена" << endl;
+}
+
 //--------------------------------------------------------------------
 
-void PersonPolyclinic::setFio() {
+void PersonPolyclinic::Read() {
+    SetFio();
+    SetAge();
+    SetPol();
+}
+
+void PersonPolyclinic::SetFio() {
     cout << "Введите ФИО: ";
-    cin >> Fio;
+    cin >> fio;
     while (cin.get() != '\n');
 }
 
-void PersonPolyclinic::setAge() {
+void PersonPolyclinic::SetAge() {
     cout << "Введите возраст: ";
     cin >> age;
     while (cin.get() != '\n');
 }
 
-void PersonPolyclinic::setPol() {
+void PersonPolyclinic::SetPol() {
     cout << "Введите пол: ";
     cin >> pol;
     while (cin.get() != '\n');
@@ -34,15 +50,21 @@ void PersonPolyclinic::setPol() {
 
 //--------------------------------------------------------------------
 
-string PersonPolyclinic::getFio() {
-    return Fio;
+void PersonPolyclinic::Display() {
+    cout << "ФИО: " << GetFio() << endl;
+    cout << "год рождения: " << GetAge() << endl;
+    cout << "пол: " << GetPol() << endl;
 }
 
-int PersonPolyclinic::getAge() {
+string PersonPolyclinic::GetFio() {
+    return fio;
+}
+
+int PersonPolyclinic::GetAge() {
     return age;
 }
 
-string PersonPolyclinic::getPol() {
+string PersonPolyclinic::GetPol() {
     return pol;
 }
 

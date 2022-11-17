@@ -13,19 +13,20 @@ private:
     bool   student;     // явл€етс€ ли работник студентом?
 
 public:
-    MedicalStaff(){}
-    MedicalStaff(string Fio, int age, string pol, int numberWorker,
+    MedicalStaff();
+    MedicalStaff(string education);
+    MedicalStaff(string fio, int age, string pol, int numberWorker,
                  int salary, int workExperience, string education, bool student);
-    ~MedicalStaff(){}
+    ~MedicalStaff();
 
-    void findMedicalStaff(int a, int b);
+    void Find(int a, int b);
 
-    void ReadMedicalStaff();
-    void setEducation();
-    void setStudent();
+    void Read();
+    void SetEducation();
+    void SetStudent();
 
-    void   DisplayMedicalStaff();
-    string getEducation();
-    bool   getStudent();
+    void   Display();
+    string GetEducation();
+    bool   GetStudent();
 };
 

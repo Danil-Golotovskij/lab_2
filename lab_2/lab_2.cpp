@@ -16,27 +16,29 @@ int main()
 	Patient      Pat[3];
 	MedicalStaff Med[3];
 
+	Doctor ff("Fio", 55, "string pol", 33,44, 4, "string specialization", "string category");
+
 	// ввод массива докторов
 	for (int i = 0; i < 2; i++) {
 		cout << "Введите " << i+1 << " доктора" << endl;
-		Doc[i].ReadDoctor();
+		Doc[i].Read();
 	}
 
 	// ввод массива пациентов
 	for (int i = 0; i < 2; i++) {
 		cout << "Введите " << i+1 << " пациента" << endl;
-		Pat[i].ReadPatient();
+		Pat[i].Read();
 	}
 
 	// ввод массива мед персонала
 	for (int i = 0; i < 2; i++) {
 		cout << "Введите " << i+1 << " мед работника" << endl;
-		Med[i].ReadMedicalStaff();
+		Med[i].Read();
 	}
 
 	// выбор 1 доктора для вывода всех его пациентов
 	for (int i = 0; i < 2; i++) {
-		Pat[i].findPatient(Doc[0].getNumberWorker());
+		Pat[i].FindAll(Doc[0].GetNumberWorker());
 	}
 
 	// вывод мед персонала в выбранном промежутке возраста
@@ -48,7 +50,7 @@ int main()
 	cin >> b;
 	while (cin.get() != '\n');
 	for (int i = 0; i < 3; i++) {
-		Med[i].findMedicalStaff(a,b);
+		Med[i].Find(a,b);
 	}
 }
 

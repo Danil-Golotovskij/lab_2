@@ -13,17 +13,20 @@ private:
     int numberWorker;     // номер работника
 
 public:
-    Worker(){}
-    Worker(int salary, int workExperience, int numberWorker, string Fio, int age, string pol);
-    ~Worker() {}
+    Worker();
+    Worker(int salary);
+    Worker(int salary, int workExperience, int numberWorker, string fio, int age, string pol);
+    ~Worker();
 
-    void setSalary();
-    void setWorkExperience();
-    void setNumberWorker();
+    void Read();
+    void SetSalary();
+    void SetWorkExperience();
+    void SetNumberWorker();
 
-    int getSalary();
-    int getWorkExperience();
-    int getNumberWorker();
+    void Display();
+    int GetSalary();
+    int GetWorkExperience();
+    int GetNumberWorker();
 };
     
 

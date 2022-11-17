@@ -1,40 +1,53 @@
 #include "MedicalStaff.h"
 
-MedicalStaff:: MedicalStaff(string Fio, int age, string pol, int numberWorker,
+MedicalStaff::MedicalStaff() :Worker() {
+    education = "---";
+    student = 0;
+}
+
+MedicalStaff::MedicalStaff(string education) :Worker() {
+    this->education = education;
+    student = 0;
+}
+
+MedicalStaff:: MedicalStaff(string fio, int age, string pol, int numberWorker,
     int salary, int workExperience, string education, bool student) {
     this->education = education;
     this->student = student;
-    Worker(salary, workExperience, numberWorker, Fio, age, pol);
+}
+
+MedicalStaff::~MedicalStaff() {
+    cout << "Деструктор завершил работу";
 }
 
 //--------------------------------------------------------------------
 
-void MedicalStaff::findMedicalStaff(int a, int b) {
-    if (getAge() >= a && getAge() <= b) {
-        DisplayMedicalStaff();
+void MedicalStaff::Find(int a, int b) {
+    if (GetAge() >= a && GetAge() <= b) {
+        Display();
     }
 }
 
 //--------------------------------------------------------------------
 
-void MedicalStaff::ReadMedicalStaff() {
-    setFio();
-    setAge();
-    setPol();
-    setSalary();
-    setWorkExperience();
-    setNumberWorker();
-    setStudent();
-    setEducation();
+void MedicalStaff::Read() {
+    SetFio();
+    SetAge();
+    SetPol();
+    SetSalary();
+    SetWorkExperience();
+    SetNumberWorker();
+    SetStudent();
+    SetEducation();
 }
 
-void MedicalStaff::setStudent() {
+void MedicalStaff::SetStudent() {
     cout << "Введите является ли человек студентом (True или False): ";
     cin >> student;
     while (cin.get() != '\n');
 }
 
-void MedicalStaff::setEducation() {
+void MedicalStaff::SetEducation() {
     cout << "Введите образование: ";
     cin >> education;
     while (cin.get() != '\n');
@@ -42,22 +55,22 @@ void MedicalStaff::setEducation() {
 
 //--------------------------------------------------------------------
 
-void MedicalStaff::DisplayMedicalStaff() {
-    cout << "\nФИО медицинского работника: " << getFio() << endl;
-    cout << "год рождения мед работника: " << getAge() << endl;
-    cout << "пол мед работника: " << getPol() << endl;
-    cout << "зарплата мед работника: " << getSalary() << endl;
-    cout << "трудовой стаж мед работника: " << getWorkExperience() << endl;
-    cout << "номер мед работника: " << getNumberWorker() << endl;
-    cout << "является ли мед работник студентом: " << getStudent() << endl;
-    cout << "образование мед работника: " << getEducation() << endl << endl;
+void MedicalStaff::Display() {
+    cout << "\nФИО медицинского работника: " << GetFio() << endl;
+    cout << "год рождения мед работника: " << GetAge() << endl;
+    cout << "пол мед работника: " << GetPol() << endl;
+    cout << "зарплата мед работника: " << GetSalary() << endl;
+    cout << "трудовой стаж мед работника: " << GetWorkExperience() << endl;
+    cout << "номер мед работника: " << GetNumberWorker() << endl;
+    cout << "является ли мед работник студентом: " << GetStudent() << endl;
+    cout << "образование мед работника: " << GetEducation() << endl << endl;
 }
 
-string MedicalStaff::getEducation() {
+string MedicalStaff::GetEducation() {
     return education;
 }
 
-bool MedicalStaff::getStudent() {
+bool MedicalStaff::GetStudent() {
     return student;
 }
 
