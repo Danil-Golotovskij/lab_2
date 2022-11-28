@@ -16,8 +16,6 @@ int main()
 	Patient      Pat[3];
 	MedicalStaff Med[3];
 
-	Doctor ff("Fio", 55, "string pol", 33,44, 4, "string specialization", "string category");
-
 	// ввод массива докторов
 	for (int i = 0; i < 2; i++) {
 		cout << "Введите " << i+1 << " доктора" << endl;
