@@ -19,6 +19,8 @@ public:
                  int salary, int workExperience, string education, bool student);
     ~MedicalStaff();
 
+    bool proverk = true; // проверка занесен ли человек в счетчик
+
     void Find(int a, int b);
 
     void Read();

@@ -19,6 +19,8 @@ public:
            int workExperience,string specialization,string category);
     ~Doctor();
 
+    bool proverk = true;     // проверка занесен ли человек в счетчик
+
     void Read();
     void SetSpecialization();
     void SetCategory();

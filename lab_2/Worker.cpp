@@ -1,4 +1,8 @@
 #include "Worker.h"
+#include "Doctor.h"
+#include "MedicalStaff.h"
+
+int Worker::counter = 0;
 
 Worker::Worker() : PersonPolyclinic() {
     salary = 0;
@@ -19,11 +23,21 @@ Worker::Worker(int salary, int workExperience, int numberWorker, string fio, int
 }
 
 Worker::~Worker() {
-    cout << "Деструктор завершил работу" << endl;
 }
 
 //--------------------------------------------------------------------
 
+void Worker::Counter(bool proverk) {
+    if (proverk == true) {
+        counter++;
+    }
+}
+
+void Worker::CounterPrint() {
+    cout << "Кол-во работников " << counter << endl;
+}
+
+//--------------------------------------------------------------------
 
 void Worker::Read() {
     SetFio();

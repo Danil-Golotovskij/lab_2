@@ -1,23 +1,30 @@
 #include "MedicalStaff.h"
+#include "Worker.h"
+#include "Doctor.h"
 
 MedicalStaff::MedicalStaff() :Worker() {
     education = "---";
     student = 0;
+    Counter(proverk);
+    proverk = false;
 }
 
 MedicalStaff::MedicalStaff(string education) :Worker() {
     this->education = education;
     student = 0;
+    Counter(proverk);
+    proverk = false;
 }
 
 MedicalStaff:: MedicalStaff(string fio, int age, string pol, int numberWorker,
     int salary, int workExperience, string education, bool student) {
     this->education = education;
     this->student = student;
+    Counter(proverk);
+    proverk = false;
 }
 
 MedicalStaff::~MedicalStaff() {
-    cout << "Деструктор завершил работу";
 }
 
 //--------------------------------------------------------------------
@@ -39,6 +46,8 @@ void MedicalStaff::Read() {
     SetNumberWorker();
     SetStudent();
     SetEducation();
+    Counter(proverk);
+    proverk = false;
 }
 
 void MedicalStaff::SetStudent() {

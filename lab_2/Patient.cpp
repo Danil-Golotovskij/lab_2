@@ -19,7 +19,7 @@ Patient::Patient(int numberPatient, int numberDoctor, string diagnosis, string f
 }
 
 Patient::~Patient() {
-    cout << "Деструктор завершил работу" << endl;
+
 }
 
 //--------------------------------------------------------------------

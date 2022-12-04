@@ -19,7 +19,6 @@ PersonPolyclinic::PersonPolyclinic(string fio, int age, string pol) {
 }
 
 PersonPolyclinic::~PersonPolyclinic() {
-    cout << "Работа деструктора завершена" << endl;
 }
 
 //--------------------------------------------------------------------

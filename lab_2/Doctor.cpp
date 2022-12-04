@@ -1,24 +1,31 @@
 #include "Doctor.h"
 #include "Patient.h"
+#include "Worker.h"
+#include "MedicalStaff.h"
 
 Doctor::Doctor() : Worker() {
     specialization = "---";
     category = "---";
+    Counter(proverk);
+    proverk = false;
 }
 
 Doctor::Doctor(string category) : Worker() {
     specialization = "---";
     this->category = category;
+    Counter(proverk);
+    proverk = false;
 }
 
 Doctor::Doctor(string fio, int age, string pol, int numberWorker,
     int salary, int workExperience, string specialization, string category) : Worker(salary, workExperience, numberWorker, fio, age, pol) {
     this->specialization = specialization;
     this->category = category;
+    Counter(proverk);
+    proverk = false;
 }
 
 Doctor::~Doctor() {
-    cout << "Деструтор завершил работу";
 }
 
 //--------------------------------------------------------------------
@@ -32,6 +39,8 @@ void Doctor::Read() {
     SetNumberWorker();
     SetSpecialization();
     SetCategory();
+    Counter(proverk);
+    proverk = false;
 }
 
 void Doctor::SetSpecialization() {
