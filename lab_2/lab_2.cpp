@@ -5,6 +5,7 @@
 #include "Worker.h"
 #include "MedicalStaff.h"
 #include "Doctor.h"
+#include <Windows.h>
 
 using namespace std;
 
@@ -12,20 +13,11 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "RUS");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	
-	// проверка функции с указателем
-	Worker b;
-	b.Read();
-	int a = b.GetWorkExperience();
-	cout << b.WorkExpMonht(&a);
-
-	// проверка функции с ссылкой
-	Worker b0;
-	b0.Read();
-	int a0 = b0.GetWorkExperience();
-	cout << b0.WorkExpMonht(a0);
-
-	Patient w;
-	Rename(w);
+	Patient p;
+	p.Read();
+	p.Display();
 }
 
