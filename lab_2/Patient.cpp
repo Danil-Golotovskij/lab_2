@@ -24,6 +24,27 @@ Patient::~Patient() {
 
 //--------------------------------------------------------------------
 
+Patient& Patient::operator ++() {   // перегрузка префиксная
+    this->numberPatient++;
+    return *this;
+}
+
+Patient& Patient::operator ++(int value) {   // перегрузка постфиксная
+    Patient temp(*this);
+    this->numberPatient++;
+    return temp;
+}
+
+//--------------------------------------------------------------------
+
+void Rename(Patient &p) {    // дружественная функция для смены ФИО
+    cout << "Введите ФИО на которое хотите изменить: ";
+    cin >> p.diagnosis;
+    while (cin.get() != '\n');
+}
+
+//--------------------------------------------------------------------
+
 void Patient::FindAll(int numberDoctor1) {
     if (GetNumberDoctor() == numberDoctor1) {
         cout << "ФИО пациента: ";

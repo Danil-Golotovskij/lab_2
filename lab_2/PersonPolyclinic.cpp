@@ -19,7 +19,9 @@ PersonPolyclinic::PersonPolyclinic(string fio, int age, string pol) {
 }
 
 PersonPolyclinic::~PersonPolyclinic() {
+
 }
+
 
 //--------------------------------------------------------------------
 

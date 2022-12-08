@@ -3,6 +3,7 @@
 #include "Worker.h"
 #include "MedicalStaff.h"
 
+
 Doctor::Doctor() : Worker() {
     specialization = "---";
     category = "---";

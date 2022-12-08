@@ -39,6 +39,18 @@ void Worker::CounterPrint() {
 
 //--------------------------------------------------------------------
 
+int Worker::WorkExpMonht(int* workExp) {    // метод с указателем
+    *workExp = *workExp * 12;
+    return *workExp;
+}
+
+int Worker::WorkExpMonht(int &workExp) {    // метод с ссылкой
+    workExp = workExp * 12;
+    return workExp;
+}
+
+//--------------------------------------------------------------------
+
 void Worker::Read() {
     SetFio();
     SetAge();

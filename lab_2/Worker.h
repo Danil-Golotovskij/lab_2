@@ -25,6 +25,9 @@ public:
     static void Counter(bool proverk); // метод занесени€ в счетчик
     static void CounterPrint();
 
+    int WorkExpMonht(int* workExp); // функци€ с указателем переводит стаж в мес€цы
+    int WorkExpMonht(int &workExp); // функци€ с ссылкой переводит стаж в мес€цы
+
     void Read();
     void SetSalary();
     void SetWorkExperience();

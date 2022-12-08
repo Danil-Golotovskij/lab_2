@@ -17,6 +17,7 @@ public:
     PersonPolyclinic(string fio, int age, string pol);
     ~PersonPolyclinic();
 
+
     void Read();
     void SetFio();
     void SetAge();
@@ -27,5 +28,7 @@ public:
     string GetPol();
     int    GetAge();
 };
+
+
    
 
