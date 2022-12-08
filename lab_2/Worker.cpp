@@ -2,7 +2,7 @@
 #include "Doctor.h"
 #include "MedicalStaff.h"
 
-int Worker::counter = 0;
+int Worker::counter = 0; // объявление
 
 Worker::Worker() : PersonPolyclinic() {
     salary = 0;
