@@ -27,8 +27,8 @@ public:
     static void Counter(bool proverk); // метод занесени€ в счетчик
     static void CounterPrint();         // вывести сколько работников в больнице
 
-    int WorkExpMonht(int* workExp); // функци€ с указателем переводит стаж в мес€цы
-    int WorkExpMonht(int& workExp); // функци€ с ссылкой переводит стаж в мес€цы
+    int WorkExpMonht1(int *workExp); // функци€ с указателем увеличить стаж на 1
+    int WorkExpMonht2(int &workExp); // функци€ с ссылкой уввеличить стаж на 1
 
     void Read();
     void SetSalary();

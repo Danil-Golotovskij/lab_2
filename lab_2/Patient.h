@@ -24,7 +24,7 @@ public:
 
     void FindAll(int numberDoctor);
 
-    friend void Rename(Patient& p); // дружественная функция для изменения номера пациента
+    friend void Rename(Patient& p); // дружественная функция для изменения диагноза
 
     // номер пациента увеличиваем на 1
     Patient& operator ++();          // перегрузка префиксная

@@ -16,8 +16,9 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	
-	Doctor d;
-	MedicalStaff m;
-	Worker::CounterPrint();
+	Patient p;
+	p.SetDiagnosis();
+	Rename(p);
+	cout << p.GetDiagnosis();
 }
 

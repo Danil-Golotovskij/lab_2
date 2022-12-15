@@ -2,7 +2,6 @@
 #include "Doctor.h"
 #include "MedicalStaff.h"
 
-
 int Worker::counter = 0; // объявление статической переменной
 
 //--------------------------------------------------------------------
@@ -42,13 +41,13 @@ void Worker::CounterPrint() {          // статический метод
 
 //--------------------------------------------------------------------
 
-int Worker::WorkExpMonht(int* workExp) {    // метод с указателем
-    *workExp = *workExp * 12;
+int Worker::WorkExpMonht1(int *workExp) {    // метод с указателем
+    *workExp += 1;
     return *workExp;
 }
 
-int Worker::WorkExpMonht(int &workExp) {    // метод с ссылкой
-    workExp = workExp * 12;
+int Worker::WorkExpMonht2(int &workExp) {    // метод с ссылкой
+    workExp += 1;
     return workExp;
 }
 

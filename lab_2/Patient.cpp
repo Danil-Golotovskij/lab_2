@@ -49,7 +49,7 @@ Patient::~Patient() {
 
 //--------------------------------------------------------------------
 
-Patient& Patient::operator ++() {   // перегрузка префиксная
+Patient& Patient::operator ++() {            // перегрузка префиксная
     this->numberPatient++;
     return *this;
 }
