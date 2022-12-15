@@ -2,7 +2,10 @@
 #include "Doctor.h"
 #include "MedicalStaff.h"
 
-int Worker::counter = 0; // объявление
+
+int Worker::counter = 0; // объявление статической переменной
+
+//--------------------------------------------------------------------
 
 Worker::Worker() : PersonPolyclinic() {
     salary = 0;
@@ -27,14 +30,14 @@ Worker::~Worker() {
 
 //--------------------------------------------------------------------
 
-void Worker::Counter(bool proverk) {
+void Worker::Counter(bool proverk) {   // статический метод 
     if (proverk == true) {
         counter++;
     }
 }
 
-void Worker::CounterPrint() {
-    cout << "Кол-во работников " << counter << endl;
+void Worker::CounterPrint() {          // статический метод
+    cout << "Кол-во работников: " << counter << endl;
 }
 
 //--------------------------------------------------------------------
@@ -100,4 +103,5 @@ int Worker::GetWorkExperience() {
 int Worker::GetNumberWorker() {
     return numberWorker;
 }
+
 

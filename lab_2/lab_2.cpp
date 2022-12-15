@@ -16,8 +16,8 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	
-	Patient p;
-	p.Read();
-	p.Display();
+	Doctor d;
+	MedicalStaff m;
+	Worker::CounterPrint();
 }
 
