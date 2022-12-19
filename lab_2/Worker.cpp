@@ -4,7 +4,41 @@
 
 int Worker::counter = 0; // объявление статической переменной
 
+void Worker::SetFio() {
+    cout << "Введите ФИО: ";
+    cin >> fio;
+    while (cin.get() != '\n');
+}
+
+void Worker::SetAge() {
+    cout << "Введите возраст: ";
+    cin >> age;
+    while (cin.get() != '\n');
+}
+
+void Worker::SetPol() {
+    cout << "Введите пол: ";
+    cin >> pol;
+    while (cin.get() != '\n');
+}
+
 //--------------------------------------------------------------------
+
+
+string Worker::GetFio() {
+    return fio;
+}
+
+int Worker::GetAge() {
+    return age;
+}
+
+string Worker::GetPol() {
+    return pol;
+}
+
+//--------------------------------------------------------------------
+
 
 Worker::Worker() : PersonPolyclinic() {
     salary = 0;
@@ -18,7 +52,10 @@ Worker::Worker(int salary) : PersonPolyclinic() {
     numberWorker = 0;
 }
 
-Worker::Worker(int salary, int workExperience, int numberWorker, string fio, int age, string pol) : PersonPolyclinic(fio, age, pol) {
+Worker::Worker(int salary, int workExperience, int numberWorker, string fio, int age, string pol) {
+    this->fio = fio;
+    this->age = age;
+    this->pol = pol;
     this->salary = salary;
     this->workExperience = workExperience;
     this->numberWorker = numberWorker;
@@ -49,6 +86,19 @@ int Worker::WorkExpMonht1(int *workExp) {    // метод с указателем
 int Worker::WorkExpMonht2(int &workExp) {    // метод с ссылкой
     workExp += 1;
     return workExp;
+}
+
+//--------------------------------------------------------------------
+
+void Worker::ChangeWorker() {       // метод для перегрузки
+    cout << "Введите номер работника: ";
+    cin >> numberWorker;
+}
+
+//--------------------------------------------------------------------
+
+void Worker::PrintNumber() {
+    cout << "Номер работника: " << numberWorker;
 }
 
 //--------------------------------------------------------------------
@@ -91,7 +141,7 @@ void Worker::Display() {
     cout << "номер работника: " << GetNumberWorker() << endl;
 }
 
-int Worker::GetSalary() {
+double Worker::GetSalary() {
     return salary;
 }
 

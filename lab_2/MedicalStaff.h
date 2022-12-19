@@ -6,11 +6,12 @@
 
 using namespace std;
 
+
 class MedicalStaff : public Worker {
 
-private:
+protected:
     string education;   // ќбразование
-    bool   student;     // явл€етс€ ли работник студентом?
+    bool   student;   // явл€етс€ ли работник студентом?
 
 public:
     MedicalStaff();

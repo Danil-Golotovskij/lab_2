@@ -8,7 +8,7 @@ using namespace std;
 
 class Patient : public PersonPolyclinic {
 
-private:
+protected:
     int numberPatient;   // Номер пациента
     int numberDoctor;    // Номер доктора
     string diagnosis;    // Диагноз
@@ -21,6 +21,14 @@ public:
     Patient(int numberDoctor);
     Patient(int numberPatient, int numberDoctor, string diagnosis, string fio, int age, string pol);
     ~Patient();
+
+    void SetFio();
+    void SetAge();
+    void SetPol();
+
+    string GetFio();
+    string GetPol();
+    int    GetAge();
 
     void FindAll(int numberDoctor);
 

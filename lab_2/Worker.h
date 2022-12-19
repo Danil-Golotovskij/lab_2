@@ -9,11 +9,10 @@ using namespace std;
 
 class Worker : public PersonPolyclinic {
 
-private:
-    int salary;           // Зарплата
+protected:
+    double salary;           // Зарплата
     int workExperience;   // Трудовой стаж
     int numberWorker;     // номер работника
-
 
 public:
     Worker();
@@ -21,14 +20,26 @@ public:
     Worker(int salary, int workExperience, int numberWorker, string fio, int age, string pol);
     ~Worker();
 
+    void SetFio();
+    void SetAge();
+    void SetPol();
+
+    string GetFio();
+    string GetPol();
+    int    GetAge();
+
     bool proverk = true;  // проверка занесен ли человек в счетчик
 
     static int counter;                 // кол-во работников в больнице
-    static void Counter(bool proverk); // метод занесения в счетчик
+    static void Counter(bool proverk);  // метод занесения в счетчик
     static void CounterPrint();         // вывести сколько работников в больнице
 
     int WorkExpMonht1(int *workExp); // функция с указателем увеличить стаж на 1
     int WorkExpMonht2(int &workExp); // функция с ссылкой уввеличить стаж на 1
+
+    void ChangeWorker();              // функция для изменения номера работника
+
+    virtual void PrintNumber();  // виртуальная функция вывода номера работника
 
     void Read();
     void SetSalary();
@@ -36,9 +47,9 @@ public:
     void SetNumberWorker();
 
     void Display();
-    int GetSalary();
+    double GetSalary();
     int GetWorkExperience();
-    int GetNumberWorker();
+    int GetNumberWorker();    
 };
 
     

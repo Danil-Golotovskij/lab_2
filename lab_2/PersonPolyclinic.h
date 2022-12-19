@@ -4,29 +4,24 @@
 
 using namespace std;
 
+
 class PersonPolyclinic {
 
-private:
+protected:
+
     string fio;   // ФИО 
     string pol;   // Пол
     int    age;   // Возраст
 
 public:
-    PersonPolyclinic();
-    PersonPolyclinic(int age);
-    PersonPolyclinic(string fio, int age, string pol);
-    ~PersonPolyclinic();
 
+    virtual void SetFio() = 0;
+    virtual void SetAge() = 0;
+    virtual void SetPol() = 0;
 
-    void Read();
-    void SetFio();
-    void SetAge();
-    void SetPol();
-
-    void Display();
-    string GetFio();
-    string GetPol();
-    int    GetAge();
+    virtual string GetFio() = 0;
+    virtual string GetPol() = 0;
+    virtual int    GetAge() = 0;
 };
 
 

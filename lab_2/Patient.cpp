@@ -1,5 +1,40 @@
 #include "Patient.h"
 
+void Patient::SetFio() {
+    cout << "Введите ФИО: ";
+    cin >> fio;
+    while (cin.get() != '\n');
+}
+
+void Patient::SetAge() {
+    cout << "Введите возраст: ";
+    cin >> age;
+    while (cin.get() != '\n');
+}
+
+void Patient::SetPol() {
+    cout << "Введите пол: ";
+    cin >> pol;
+    while (cin.get() != '\n');
+}
+
+//--------------------------------------------------------------------
+
+
+string Patient::GetFio() {
+    return fio;
+}
+
+int Patient::GetAge() {
+    return age;
+}
+
+string Patient::GetPol() {
+    return pol;
+}
+
+//--------------------------------------------------------------------
+
 
 Patient::Patient() : PersonPolyclinic() {
     numberPatient = 0;
@@ -29,7 +64,10 @@ Patient::Patient(int numberDoctor) : PersonPolyclinic() {
     analisi[2][0] = "Тест на гепатит С: ";
 }
 
-Patient::Patient(int numberPatient, int numberDoctor, string diagnosis, string fio, int age, string pol) : PersonPolyclinic(fio,age,pol) {
+Patient::Patient(int numberPatient, int numberDoctor, string diagnosis, string fio, int age, string pol){
+    this->fio = fio;
+    this->age = age;
+    this->pol = pol;
     this->numberPatient = numberPatient;
     this->numberDoctor = numberDoctor;
     this->diagnosis = diagnosis;
